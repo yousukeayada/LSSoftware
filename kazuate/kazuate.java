@@ -2,9 +2,12 @@
 
 import java.util.Scanner;
 
-class Main{
+public class kazuate{
     public static void main(String[] args){
+        // 答え
         final int ANS = 10;
+
+        // 標準入力
         Scanner scan = new Scanner(System.in);
 
         int count = 0;
@@ -39,5 +42,11 @@ class Main{
                 System.out.println("数値ではありません");
             }
         }
+
+        if(count >= 5){
+            System.out.println("失敗");
+        }
+
+        scan.close();
     }
 }
