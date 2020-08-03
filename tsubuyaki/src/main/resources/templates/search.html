@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>みんなのつぶやき</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body class="container">
+
+    <div class="m-3">
+        <h3 th:text="${keyword} + ': 検索結果（' + ${searchResultSize} + '件）'"></h3>
+        <div class="overflow-auto">
+            <ul class="list-group">
+                <li class="list-group-item" th:each="t: ${searchResult}">
+                    [[${t.comment}]] -- [[${t.name}]] on [[${t.createdAt}]]
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="m-3">
+        <h2>みんなのつぶやきへ</h2>
+        <a th:href="@{/read}">戻る</a>
+    </div>
+</body>
+</html>
