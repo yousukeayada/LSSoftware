@@ -42,7 +42,7 @@ public class TsubuyakiService {
     }
 
     public List<Tsubuyaki> getSearchResult(String keyword) {
-        final Iterable<Tsubuyaki> found = repo.findAll();
+        final Iterable<Tsubuyaki> found = repo.findByCommentContaining(keyword);
         final ArrayList<Tsubuyaki> list = new ArrayList<>();
 
         found.forEach(list::add);
